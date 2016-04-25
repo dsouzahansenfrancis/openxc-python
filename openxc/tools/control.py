@@ -19,7 +19,11 @@ def version(interface):
     print("Device is running version %s" % interface.version())
 
 def sd_mount_status(interface):
-    print("SD card mount status: %d" % interface.sd_mount_status())
+    result = interface.sd_mount_status()
+    if(result == 1):
+        print("SD card mount status: true")
+    else:
+        print("SD card mount status: false")		
 
 def device_id(interface):
     print("Device ID is %s" % interface.device_id())
